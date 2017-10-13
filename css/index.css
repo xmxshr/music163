@@ -1,0 +1,203 @@
+body{
+  color: #333;
+  font-family: Helvetica, sans-serif;
+}
+
+.sectionTitle{
+  padding-left: 7px;
+  border-left: 2px solid #cc3330;
+  font-size: 17px;
+  line-height: 17px;
+  margin-bottom: 16px;
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+}
+
+/* topBar */
+section.topBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 10px;
+  background: #d43c33;
+}
+section.topBar .logo svg{
+  height: 25px;
+  width: 142px;
+  vertical-align: middle;
+}
+section.topBar .download{
+  position: relative;
+  padding: 0 10px;
+  color: #fff;
+  line-height: 30px;
+  font-size: 15px;
+}
+section.topBar .download::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid;
+  width: 200%;
+  height: 200%;
+  border-radius: 60px;
+  transform: scale(.5);
+  transform-origin: 0 0;
+}
+
+
+/* navBar */
+section.navBar{}
+.navBar .tabs{
+  display: flex;
+  position: relative;
+  top: 1px;
+  text-align: center;
+  font-size: 15px;
+}
+.navBar .tabs::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: 1px solid #e3e3e3;
+  width: 200%;
+  transform: scale(.5);
+  transform-origin: 0 0;
+}
+.navBar .tabs > li{
+  flex: 1;
+  width: 33.333333%;
+  line-height: 40px;
+}  
+.navBar .tabs > li.active{
+  color: #cc3330;
+}
+.navBar .tabs > li.active >div::after{
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 1px;
+  border: 1px solid;
+  width: 100%;
+  z-index: 1;
+}
+
+.navBar .tabs > li >div{
+  display: inline-block;
+  padding: 0 5px;
+  position: relative;
+}
+
+/* tabContent */
+.tabContent{
+  background: #FCFCFD;
+  margin-top: 104px;
+}
+.tabContent > li{
+  display: none;
+}
+.tabContent > li.active{
+  display: block;
+}
+
+/* page1 */
+/* playlist */
+section.playlists{
+  padding-top: 21px;
+}
+
+.playlists .songs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.playlists .songs > li{
+  width: 32.9%;
+}
+.playlists .songs .cover img{
+  width: 100%;
+}
+.playlists .songs > li p{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 2px 2px 16px 6px;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+/* latestSong */
+section.latestSong{
+  padding-top: 25px;
+}
+.latestSong .list > li {
+  position: relative;
+  margin-left: 10px;
+  border-bottom: 1px solid #efeff0;
+  padding-top: 6px;
+  padding-bottom: 5px;
+}
+.latestSong .list > li h3{
+  font-size: 17px;
+  line-height: 1.5;
+}
+.latestSong .list > li p{
+  font-size: 12px;
+  line-height: 1.5;
+  color: #888;
+}
+.latestSong .list > li .icon-sq{
+  fill: #fc5d32;
+  font-size: 15px;
+  vertical-align: middle;
+  height: 17px;
+  width: 13px;
+}
+.latestSong .list > li .icon-play{
+  fill: #b7b6b6;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 6px;
+  bottom: 12px;
+}
+
+/* art */
+ section.art{
+  text-align: center;
+  margin-top: 3px;
+  padding-top: 64px;
+  padding-bottom: 18px;
+  background: transparent url(https://i.loli.net/2017/10/13/59e0d56298ae3.png) no-repeat center;
+  background-size: cover;
+ }
+.art .logo svg{
+  width: 230px;
+  height: 44px;
+}
+.art .link-wrapper a{
+  display: inline-block;
+  color: #cc3330;
+  font-size: 16px;
+  border: 1px solid #cc3330;
+  line-height: 38px;
+  padding: 0 47px;
+  margin-top: 11px;
+  border-radius: 60px;
+  margin-bottom: 4px;
+}
+.art .copyright{
+  color: #888;
+  font-size: 12px;
+  transform: scale(0.75);
+}
