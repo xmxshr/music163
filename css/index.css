@@ -17,9 +17,12 @@ body{
   left: 0;
   width: 100%;
   background: #fff;
-  z-index: 1;
+  z-index: 3;
 }
 
+.loading{
+  text-align: center;
+}
 /* topBar */
 section.topBar{
   display: flex;
@@ -108,6 +111,7 @@ section.navBar{}
 .tabContent > li.active{
   display: block;
 }
+
 
 /* page1 */
 /* playlist */
@@ -201,3 +205,170 @@ section.latestSong{
   font-size: 12px;
   transform: scale(0.75);
 }
+
+
+/* page2 */
+/* hotMusicCover */
+.hotMusicCover{
+  padding-top: 146px;
+  position: relative;
+  background: url(https://i.loli.net/2017/10/16/59e4690be9a44.jpg
+  ) no-repeat center;
+  background-size: cover;
+}
+.hotMusicCover::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.hotMusic{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding-left: 20px;
+  padding-bottom: 3px;
+  z-index: 2;
+}
+
+.hotMusic .title{
+  width: 142px;
+  height: 67px;
+  background: url(https://i.loli.net/2017/10/16/59e467146cfb0.png
+  ) no-repeat;
+  background-size: 166px 97px;
+  background-position: -24px -30px;
+}
+.hotMusic > p{
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ebdbd8;
+  transform: scale(.91);
+  transform-origin: 0 0;
+}
+
+/* hotMusicContent */
+.hotMusicContent .list > li {
+  position: relative;
+  margin-left: 10px;
+}
+.hotMusicContent .list .listNumber{
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 17px;
+  color: #df3436;
+}
+.hotMusicContent .list .listContent{
+  flex-grow: 1;
+  border-bottom: 1px solid #efeff0;
+  padding-top: 6px;
+  padding-bottom: 5px;
+}
+.hotMusicContent .list > li a{
+  display: flex;
+  flex-direction: row;
+}
+.hotMusicContent .list > li h3{
+  font-size: 17px;
+  line-height: 1.5;
+}
+.hotMusicContent .list > li p{
+  font-size: 12px;
+  line-height: 1.5;
+  color: #888;
+}
+.hotMusicContent .list > li .icon-sq{
+  fill: #fc5d32;
+  font-size: 15px;
+  vertical-align: middle;
+  height: 17px;
+  width: 13px;
+}
+.hotMusicContent .list > li .icon-play{
+  fill: #b7b6b6;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 6px;
+  bottom: 13px;
+}
+
+/* moreButton */
+.moreButton{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.moreButton span{
+  padding-right: 14px;
+  font-size: 14px;
+  color: #999;
+  line-height: 55px;
+  background: url(http://oxwijsbmc.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.svg) no-repeat;
+  background-size: 7px 14px;
+  background-position: 91px 21px;
+}
+
+
+/* page3 */
+/* searchInput */
+.searchInput{
+  padding: 15px 10px 14px;
+  border-bottom: 1px solid #edeff0;
+  position: relative;
+}
+.searchInput input{
+  width: 100%;
+  padding: 7px 30px 8px;
+  border: none;
+  border-radius: 30px;
+  background: #ebecec;
+  outline: none;
+  
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+color:#c9c9c9;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color:#c9c9c9;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+color:#c9c9c9;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+color:#c9c9c9;
+}
+.searchInput i{
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  background: url(http://oxwijsbmc.bkt.clouddn.com/image/search.svg) no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+}
+
+/* hotSearch */
+.hotSearch{
+  padding: 15px 10px;
+}
+.hotSearch h3{
+  font-size: 12px;
+  color: #666;
+}
+.hotSearch .hotSearchItem{
+
+}
+
+
+/* searchHistory */
+.searchHistory{}
+
+

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/xmxshr/music163#readme",
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "leancloud-storage": "^3.2.1"
   }
 }

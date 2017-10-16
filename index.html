@@ -63,7 +63,7 @@
     </div>
 
     <ol class="tabContent">
-      <li class="active">
+      <li>
         <section class="playlists">
           <h2 class="sectionTitle">推荐歌单</h2>
           <ul class="songs">
@@ -107,137 +107,12 @@
         </section>
         <section class="latestSong">
           <h2 class="sectionTitle">最新音乐</h2>
-          <ul class="list">
-            <li>
-              <a href="#">
-                <h3>美国 Remix</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  Ty. - 1989 Dance Remix</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>Holy Mountain</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  Noel Gallagher's High Flying Birds - Holy Mountain</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>Teenager</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  GOT7 - 7 FOR 7</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>花之毒</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  戴荃 - 花之毒</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>INTO THE POWERSPOT</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  DAISHI DANCE - #POWERSPOT</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>보통의 날</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  Standing Egg - 20세기 소년소녀 OST Part.1</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>失物招领</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  徐秉龙 - 氤氲</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>嘘つきエミリー</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  鎖那 - Hush a by little girl</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>샤방샤방</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  朴玄彬 / 李起光 - 판타스틱 듀오 2 Part.17</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <h3>糸</h3>
-                <p>
-                  <svg class="icon icon-sq">
-                    <use xlink:href="#icon-sq"></use>
-                  </svg>
-                  Aimer - 花の唄 / ONE / 六等星の夜 Magic Blue ver.</p>
-                <svg class="icon icon-play">
-                  <use xlink:href="#icon-play"></use>
-                </svg>
-              </a>
-            </li>
+          <div id="loading" class="loading">
+              <img src="https://i.loli.net/2017/10/16/59e463e45e1ed.gif
+                  " alt="">
+            </div>
+          <ul id="latestSong" class="list">
+
           </ul>
         </section>
         <section class="art">
@@ -298,15 +173,44 @@
         </section>
       </li>
       <li>
-        page2
+        <section class="hotMusicCover">
+          <div class="hotMusic">
+            <div class="title"></div>
+            <p>更新日期：10月16日</p>
+          </div>
+        </section>
+        <section class="hotMusicContent">
+          <div id="loading" class="loading">
+            <img src="https://i.loli.net/2017/10/16/59e463e45e1ed.gif
+                " alt="">
+          </div>
+          <ol id="hotMusicOl" class="list">
+
+          </ol>
+        </section>
+        <section class="moreButton">
+          <span>查看完整榜单</span>
+        </section>
       </li>
-      <li>
-        page3
+      <li class="active">
+        <section class="searchInput">
+          <i></i>
+          <input type="text" placeholder="搜索歌曲、歌手、专辑">
+        </section>
+        <section class="hotSearch">
+          <h3>热门搜索</h3>
+          <div class="hotSearchItem">
+            陈奕迅
+          </div>
+        </section>
+        <section class="searchHistory">
+
+        </section>
       </li>
     </ol>
   </div>
 
-
+  <script src="./vendors/av-min.js"></script>
   <script src="//at.alicdn.com/t/font_440995_fs7ohx5h8ji9hpvi.js"></script>
   <script src="./vendors/jquery.min.js"></script>
   <script src="./js/index.js"></script>
