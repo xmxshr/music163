@@ -63,7 +63,7 @@
     </div>
 
     <ol class="tabContent">
-      <li>
+      <li class="active">
         <section class="playlists">
           <h2 class="sectionTitle">推荐歌单</h2>
           <ul class="songs">
@@ -108,9 +108,9 @@
         <section class="latestSong">
           <h2 class="sectionTitle">最新音乐</h2>
           <div id="loading" class="loading">
-              <img src="https://i.loli.net/2017/10/16/59e463e45e1ed.gif
+            <img src="https://i.loli.net/2017/10/16/59e463e45e1ed.gif
                   " alt="">
-            </div>
+          </div>
           <ul id="latestSong" class="list">
 
           </ul>
@@ -173,45 +173,110 @@
         </section>
       </li>
       <li>
-        <section class="hotMusicCover">
-          <div class="hotMusic">
-            <div class="title"></div>
-            <p>更新日期：10月16日</p>
-          </div>
-        </section>
-        <section class="hotMusicContent">
-          <div id="loading" class="loading">
-            <img src="https://i.loli.net/2017/10/16/59e463e45e1ed.gif
+        <div class="pageCover">
+          <section class="hotMusicCover">
+            <div class="hotMusic">
+              <div class="title"></div>
+              <p>更新日期：10月16日</p>
+            </div>
+          </section>
+          <section class="hotMusicContent">
+            <div id="loading" class="loading">
+              <img src="https://i.loli.net/2017/10/16/59e463e45e1ed.gif
                 " alt="">
-          </div>
-          <ol id="hotMusicOl" class="list">
+            </div>
+            <ol id="hotMusicOl" class="list">
 
-          </ol>
-        </section>
-        <section class="moreButton">
-          <span>查看完整榜单</span>
-        </section>
+            </ol>
+          </section>
+          <section class="moreButton">
+            <span>查看完整榜单</span>
+          </section>
+        </div>
       </li>
-      <li class="active">
-        <section class="searchInput">
-          <i></i>
-          <input type="text" placeholder="搜索歌曲、歌手、专辑">
-        </section>
-        <section class="hotSearch">
-          <h3>热门搜索</h3>
-          <div class="hotSearchItem">
-            陈奕迅
-          </div>
-        </section>
-        <section class="searchHistory">
+      <li>
+        <div class="pageCover">
+          <section class="searchInput">
+            <svg class="icon icon-search">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+            <input type="text" placeholder="搜索歌曲、歌手、专辑">
+          </section>
+          <section class="hotSearch">
+            <h3>热门搜索</h3>
+            <ul>
+              <li class="hotSearchItem">
+                朴振荣的Party People
+              </li>
+              <li class="hotSearchItem">
+                陈奕迅
+              </li>
+              <li class="hotSearchItem">
+                白夜
+              </li>
+              <li class="hotSearchItem">
+                Panama
+              </li>
+              <li class="hotSearchItem">
+                Shape Of You
+              </li>
+              <li class="hotSearchItem">
+                我们不一样
+              </li>
+              <li class="hotSearchItem">
+                Time
+              </li>
+              <li class="hotSearchItem">
+                Got7
+              </li>
+            </ul>
 
-        </section>
+          </section>
+          <section class="searchHistory">
+            <ul>
+              <li class="searchHistoryItem">
+                <a href="#">
+                  <div class="icon-wrapper">
+                    <svg class="icon icon-time">
+                      <use xlink:href="#icon-time"></use>
+                    </svg>
+                  </div>
+
+                  <div class="itemContent">
+                    <h3>陈奕迅</h3>
+                    <svg class="icon icon-fork">
+                      <use xlink:href="#icon-fork"></use>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li class="searchHistoryItem">
+                <a href="#">
+                  <div class="icon-wrapper">
+                    <svg class="icon icon-time">
+                      <use xlink:href="#icon-time"></use>
+                    </svg>
+                  </div>
+
+                  <div class="itemContent">
+                    <h3>理想三旬</h3>
+                    <svg class="icon icon-fork">
+                      <use xlink:href="#icon-fork"></use>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+          </section>
+        </div>
+
       </li>
     </ol>
   </div>
 
   <script src="./vendors/av-min.js"></script>
-  <script src="//at.alicdn.com/t/font_440995_fs7ohx5h8ji9hpvi.js"></script>
+  <script src="//at.alicdn.com/t/font_440995_4q69f6sbr50442t9.js"></script>
   <script src="./vendors/jquery.min.js"></script>
   <script src="./js/index.js"></script>
 </body>
