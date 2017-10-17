@@ -20,25 +20,36 @@ let $latestSongUl = $('#latestSong')
 var query = new AV.Query('Song')
 query.limit(10)
 query.find().then(function (results) {
+  let index = 1
   for (let i = 0; i < results.length; i++) {
     let song = results[i].attributes
     let songId = results[i].id
     let li = `
           <li>
             <a href="./song.html?id=${songId}">
-              <h3>${song.name}</h3>
-              <p>
-                <svg class="icon icon-sq">
-                  <use xlink:href="#icon-sq"></use>
-                </svg>
-                ${song.singer} - 专辑 </p>
-              <svg class="icon icon-play">
-                <use xlink:href="#icon-play"></use>
-              </svg>
+              <div class="listContentWrapper">
+                <div class="listContent">
+                  <h3>${song.name}</h3>
+                  <p><span id=${'latestSong' + index}></span> ${song.singer} - ${song.album} </p>
+                </div>  
+                <div class="iconWrapper">
+                  <svg class="icon icon-play">
+                    <use xlink:href="#icon-play"></use>
+                  </svg>
+                </div>
+              </div>
             </a>
           </li>
     `
     $latestSongUl.append(li)
+    if (song.sq) {
+      let svg = `
+      <svg class="icon icon-sq">
+        <use xlink:href="#icon-sq"></use>
+      </svg>`
+      $('#latestSong' + index).append(svg)
+    }
+    index++
   }
   $('.latestSong #loading').remove()
 }, function (error) {
@@ -54,25 +65,37 @@ hotSongs.find().then(function (results) {
   for (let i = 0; i < results.length; i++) {
     let song = results[i].attributes
     let songId = results[i].id
-    if(song.hot){
+    if (song.hot) {
+      if (i <= 3) {
+        $('.hotMusicContent .list .listNumber').css({
+          color: '#df3436'
+        })
+      }
       let li = `
               <li>
                 <a href="./song.html?id=${songId}">
                   <div class="listNumber"> ${pad(index)} </div>
-                <div class="listContent">
-                    <h3>${song.name}</h3>
-                    <p>
-                      <svg class="icon icon-sq">
-                        <use xlink:href="#icon-sq"></use>
+                  <div class="listContentWrapper">
+                    <div class="listContent">
+                      <h3>${song.name}</h3>
+                      <p><span id=${'hotMusic' + index}></span> ${song.singer} - ${song.album} </p>
+                    </div>  
+                    <div class="iconWrapper">
+                      <svg class="icon icon-play">
+                        <use xlink:href="#icon-play"></use>
                       </svg>
-                      ${song.singer} - 专辑 </p>
-                    <svg class="icon icon-play">
-                      <use xlink:href="#icon-play"></use>
-                    </svg>
-                </div>
+                    </div>
+                  </div>
                 </a>
-              </li>`    
-      $hotMusicOl.append(li)  
+              </li>`
+      $hotMusicOl.append(li)
+      if (song.sq) {
+        let svg = `
+        <svg class="icon icon-sq">
+          <use xlink:href="#icon-sq"></use>
+        </svg>`
+        $('#hotMusic' + index).append(svg)
+      }
       index = parseInt(index) + 1
     }
   }
@@ -81,6 +104,6 @@ hotSongs.find().then(function (results) {
   console.log(error)
 })
 
-function pad(number){
+function pad(number) {
   return number >= 10 ? number : '0' + number
 }
