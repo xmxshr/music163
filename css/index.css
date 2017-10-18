@@ -44,6 +44,34 @@ body{
 }
 
 
+.list > li {
+  position: relative;
+  margin-left: 10px;
+}
+.list > li h3{
+  font-size: 17px;
+  line-height: 1.5;
+}
+.list > li p{
+  font-size: 12px;
+  line-height: 1.5;
+  color: #888;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.list .listContent{
+  flex: 1;
+}
+.list .listContentWrapper{
+  display: flex;
+  border-bottom: 1px solid #efeff0;
+  padding-top: 6px;
+  padding-bottom: 5px;
+}
+
+
 /* topBar */
 section.topBar{
   display: flex;
@@ -79,7 +107,6 @@ section.topBar .download::after{
 
 
 /* navBar */
-section.navBar{}
 .navBar .tabs{
   display: flex;
   position: relative;
@@ -165,33 +192,6 @@ section.playlists{
 section.latestSong{
   padding-top: 25px;
 }
-.latestSong .list > li {
-  position: relative;
-  margin-left: 10px;
-  
-}
-/* .latestSong .list > li a{
-  display: flex;
-  flex-direction: row;
-} */
-.latestSong .list > li h3{
-  font-size: 17px;
-  line-height: 1.5;
-}
-.latestSong .list > li p{
-  font-size: 12px;
-  line-height: 1.5;
-  color: #888;
-}
-.latestSong .list .listContent{
-  flex: 1;
-}
-.latestSong .list .listContentWrapper{
-  display: flex;
-  border-bottom: 1px solid #efeff0;
-  padding-top: 6px;
-  padding-bottom: 5px;
-}
 
 /* art */
  section.art{
@@ -268,10 +268,6 @@ section.latestSong{
 }
 
 /* hotMusicContent */
-.hotMusicContent .list > li {
-  position: relative;
-  margin-left: 10px;
-}
 .hotMusicContent .list .listNumber{
   width: 28px;
   display: flex;
@@ -281,32 +277,11 @@ section.latestSong{
   color: #888;
 }
 .hotMusicContent .list .listContentWrapper{
-  display: flex;
   flex: 1;
-  border-bottom: 1px solid #efeff0;
-  padding-top: 6px;
-  padding-bottom: 5px;
 }
-.hotMusicContent .list .listContent{
-  flex-grow: 1;
-}
-
 .hotMusicContent .list > li a{
   display: flex;
   flex-direction: row;
-}
-.hotMusicContent .list > li h3{
-  font-size: 17px;
-  line-height: 1.5;
-}
-.hotMusicContent .list > li p{
-  font-size: 12px;
-  line-height: 1.5;
-  color: #888;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
 }
 
 /* moreButton */
@@ -329,6 +304,9 @@ section.latestSong{
 /* page3 */
 .pageCover{
   height: calc(100vh - 104px);
+}
+.searchResult{
+  display: none;
 }
 /* searchInput */
 .searchInput{
