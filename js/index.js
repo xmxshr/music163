@@ -40,7 +40,7 @@ let $searchContent = $('.searchContent')
 let $searchResult = $('.searchResult')
 let $searchTipsUl = $('.searchResult .searchTips')
 let $listUl = $('.searchResult .list')
-//输入
+//输入input
 let timer
 $('input#search').on('input', function (e) {
   if (timer) {
@@ -57,7 +57,7 @@ $('input#search').on('input', function (e) {
       $('.searchInput .icon-cha').css({ display: 'none' })
       return
     }
-    
+
     var queryName = new AV.Query('Song')
     queryName.contains('name', value)
     var querySinger = new AV.Query('Song')
@@ -73,11 +73,11 @@ $('input#search').on('input', function (e) {
       $listUl.empty()
       let div = `<div class="searchText">搜索"${value}"</div>`
       $searchTipsUl.append(div)
-      CreateSearchTipsLi(value, results, $searchTipsUl)
+      checkSearchTipsLi(value, results, $searchTipsUl)
     }, function (error) {
       console.log(error)
     })
-    
+
   }, 300)
 
 })
@@ -93,14 +93,33 @@ $('input#search').on('keypress', function (e) {
 })
 
 //热门搜索
-$('.hotSearchItem').on('click', function(e){
+$('.hotSearchItem').on('click', function (e) {
   let text = e.target.innerText
   querySearch(text)
 })
 
+//搜索hint
+function checkSearchTipsLi(value, results, $parent) {
+  nameArray = []
+  for (let i = 0; i < results.length; i++) {
+    let song = results[i].attributes
+    let name
+    if (song.name.toLowerCase().indexOf(value) !== -1) {
+      name = song.name
+      createSearchTipsLi(name, nameArray, $parent)
+    }
+    if (song.singer.toLowerCase().indexOf(value) !== -1) {
+      name = song.singer
+      createSearchTipsLi(name, nameArray, $parent)
+    }
+    if (song.album.toLowerCase().indexOf(value) !== -1) {
+      name = song.album
+      createSearchTipsLi(name, nameArray, $parent)
+    }
+  }
+}
 
-
-
+//input清空
 function setClearInput(boolean) {
   let clearInput = `<svg class="icon icon-cha">
   <use xlink:href="#icon-cha"></use>
@@ -115,34 +134,19 @@ function setClearInput(boolean) {
     width: '17px',
     height: '17px'
   })
-  if(boolean){
-    $('.searchInput .icon-cha').css({display:'block'})
-  }else{
-    $('.searchInput .icon-cha').css({display:'none'})
-    
+  if (boolean) {
+    $('.searchInput .icon-cha').css({ display: 'block' })
+  } else {
+    $('.searchInput .icon-cha').css({ display: 'none' })
+
   }
-  $('.searchInput .icon-cha').on('click', function(){
+  $('.searchInput .icon-cha').on('click', function () {
     $('input#search').val('')
     $searchContent.css({ display: 'block' })
     $searchResult.css({ display: 'none' })
     $('.searchInput .icon-cha').css({ display: 'none' })
     return
   })
-}
-
-
-function pad(number) {
-  return number >= 10 ? number : '0' + number
-}
-
-function checkSq(sq, id, index) {
-  if (sq) {
-    let svg = `
-    <svg class="icon icon-sq">
-      <use xlink:href="#icon-sq"></use>
-    </svg>`
-    $('#' + id + index).append(svg)
-  }
 }
 
 //发送搜索请求
@@ -172,6 +176,20 @@ function querySearch(value) {
   })
 }
 
+
+function pad(number) {
+  return number >= 10 ? number : '0' + number
+}
+
+function checkSq(sq, id, index) {
+  if (sq) {
+    let svg = `
+    <svg class="icon icon-sq">
+      <use xlink:href="#icon-sq"></use>
+    </svg>`
+    $('#' + id + index).append(svg)
+  }
+}
 
 
 /*-------------拼接li -------------*/
@@ -239,38 +257,29 @@ function createOlLi(results, $parent, id) {
 }
 
 
-function CreateSearchTipsLi(value, results, $parent) {
-  nameArray = []
-  for (let i = 0; i < results.length; i++) {
-    let song = results[i].attributes
-    let name
-    if (song.name.toLowerCase().indexOf(value) !== -1) {
-      name = song.name
-    } else if (song.singer.toLowerCase().indexOf(value) !== -1) {
-      name = song.singer
-    } else if (song.album.toLowerCase().indexOf(value) !== -1) {
-      name = song.album
-    }
-    if ($.inArray(name, nameArray) == -1) {
-      nameArray.push(name)
-      let li = `<li class="searchTipsItem">
-              <div class="icon-wrapper">
-                <svg class="icon icon-search">
-                  <use xlink:href="#icon-search"></use>
-                </svg>
-              </div>
-              <div class="itemContent">
-                <h3>${name}</h3>
-              </div>
-            </li>`
-      $parent.append(li)
-      $('.searchTipsItem').on('click', function (e) {
-        let itemText = $(e.currentTarget).find('h3')[0].innerText
-        querySearch(itemText)
-      })
-    }
+function createSearchTipsLi(name, nameArray, $parent) {
+  if ($.inArray(name, nameArray) == -1) {
+    nameArray.push(name)
+    console.log(name)
+    let li = `<li class="searchTipsItem">
+            <div class="icon-wrapper">
+              <svg class="icon icon-search">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            </div>
+            <div class="itemContent">
+              <h3>${name}</h3>
+            </div>
+          </li>`
+    $parent.append(li)
+    $('.searchTipsItem').on('click', function (e) {
+      let itemText = $(e.currentTarget).find('h3')[0].innerText
+      querySearch(itemText)
+    })
   }
+  return nameArray
 }
+
 
 function searchHistoryItem(value) {
   let li = `<li class="searchHistoryItem">
