@@ -146,10 +146,10 @@
 
 .song-description .lyric {
   margin-top: 13px;
-  height: 88px;
+  height: 96px;
   overflow: hidden;
 }
-.song-description .lyric .word{
+.song-description .lyric .words{
   transition: all 0.3s;
 }
 .song-description p {
@@ -157,7 +157,11 @@
   padding-bottom: 8px;
   color: #bfbebd;
 }
-
+.song-description .lyric .words p.addTlyric{
+  font-size: 16px;
+  line-height: 16px;
+  padding-bottom: 3px;
+}
 .song-description p.active {
   color: #fff;
 }
