@@ -4,10 +4,10 @@ $(function () {
   var query = new AV.Query('Song')
   query.get(id).then(function (results) {
     let song = results.attributes
-    let video = document.createElement('video')
-    video.src = song.songUrl
-    video.oncanplay = function () {
-      video.play()
+    let audio = document.createElement('audio')
+    audio.src = song.songUrl
+    audio.oncanplay = function () {
+      audio.play()
       $('.play-button .icon-play').css({
         display: 'none'
       })
@@ -16,14 +16,14 @@ $(function () {
       })
       $('.disc-container .disc').addClass('active')
     }
-    video.onended = function () {
+    audio.onended = function () {
       $('.disc-container .disc').removeClass('active')
     }
-    bindEventButton(video)
+    bindEventButton(audio)
     createSongInfo(song)
 
 
-    getLyric(song.lyric, video)
+    getLyric(song.lyric, audio)
     if (song.tlyric) {
       getTranslateLyric(song.tlyric)
 
@@ -71,7 +71,7 @@ $(function () {
     })
   }
 
-  function getLyric(lyric, video) {
+  function getLyric(lyric, audio) {
     let lyrics = lyric
     let regex = /\[(.+)\](.+)/
     let array = lyric.split(/\\n/)
@@ -100,13 +100,13 @@ $(function () {
       $lyricCt.append(p)
     }
 
-    setLyric(array, video)
+    setLyric(array, audio)
 
   }
 
-  function setLyric(array, video) {
+  function setLyric(array, audio) {
     setInterval(function () {
-      let currentTime = video.currentTime
+      let currentTime = audio.currentTime
       let $lyrics = $('.song-description .lyric .words p')
       let $whichLine
       for (let i = 0; i < array.length; i++) {
@@ -141,7 +141,7 @@ $(function () {
     })
   }
 
-  function bindEventButton(video) {
+  function bindEventButton(audio) {
     $('.play-button').on('click', function () {
       let $playButton = $('.play-button .icon-play')
       let $pauseButton = $('.play-button .icon-pause')
@@ -152,7 +152,7 @@ $(function () {
         $pauseButton.css({
           display: 'block'
         })
-        video.play()
+        audio.play()
         $('.disc-container .disc').addClass('active')
       } else {
         $playButton.css({
@@ -161,7 +161,7 @@ $(function () {
         $pauseButton.css({
           display: 'none'
         })
-        video.pause()
+        audio.pause()
         $('.disc-container .disc').removeClass('active')
       }
     })

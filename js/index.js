@@ -235,6 +235,10 @@ $(function () {
                 </a>
               </li>`
       $parent.append(li)
+      if(song.transName){
+        let span = `<span>(${song.transName})</span>`
+        $('.listContent h3').eq(i).append(span)
+      }
       checkSq(song.sq, id, index)
       index++
     }

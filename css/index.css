@@ -46,6 +46,10 @@
 .list > li h3{
   font-size: 17px;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 .list > li p{
   font-size: 12px;
@@ -58,6 +62,10 @@
 }
 .list .listContent{
   flex: 1;
+}
+.list .listContent h3 span {
+  color: #888;
+  margin-left: 10px;
 }
 .list .listContentWrapper{
   display: flex;
