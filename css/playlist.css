@@ -1,0 +1,275 @@
+.page-wrapper {
+  background: #f8f8f8;
+}
+
+.playlist-head {
+  position: relative;
+  display: flex;
+  padding: 30px 10px 30px 15px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.playlist-head .background-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(http://p4.music.126.net/_hX6b_6CfUmh-rLrZFTRVA==/18881913184125760.jpg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+  transform: scale(1.5);
+}
+
+.playlist-head .background-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.27);
+}
+
+.playlist-head .cover {
+  width: 126px;
+  height: 126px;
+  position: relative;
+}
+
+.playlist-head .cover img {
+  width: 100%;
+}
+
+.playlist-head .cover .list-number {
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-right: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 12px;
+}
+
+.playlist-head .cover .list-number .icon-erji {
+  font-size: 16px;
+  order: 1;
+  margin-right: 2px;
+}
+
+.playlist-head .cover .cover-icon {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 12px;
+  background-color: rgba(217, 48, 48, .8);
+  padding: 0px 8px;
+  border-top-right-radius: 26px;
+  border-bottom-right-radius: 26px;
+  line-height: 17px;
+  z-index: 1;
+}
+
+.playlist-head .info {
+  z-index: 1;
+  margin-left: 16px;
+  width: 208px;
+}
+
+.playlist-head .info h2 {
+  padding-top: 1px;
+  font-size: 17px;
+  line-height: 1.3;
+  height: 45px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-pack: center;
+}
+
+.playlist-head .info .author {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.playlist-head .info .author .avatar {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.playlist-head .info .author .avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.playlist-head .info .author .avatar .avatar-icon {
+  width: 12px;
+  height: 25px;
+  position: absolute;
+  bottom: -13px;
+  right: -5px;
+  background: url(http://s3.music.126.net/m/s/img/usericn_2x.png);
+  background-size: cover;
+  background-position: -40px 0;
+  background-repeat: no-repeat;
+}
+
+.playlist-head .info .author p {
+  color: #d0cfcf;
+  font-size: 14px;
+  line-height: 14px;
+  padding-bottom: 2px;
+}
+
+.playlist-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.playlist-info .tag-list {
+  padding: 10px 10px 0 15px;
+  display: flex;
+}
+
+.playlist-info .tag-list .tags>span {
+  font-size: 12px;
+  position: relative;
+  padding: 0 8px;
+  line-height: 22px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.playlist-info .tag-list .tags>span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 40px;
+  transform: scale(.5);
+  transform-origin: 0 0;
+}
+
+.playlist-info .intro {
+  padding: 10px 10px 0 15px;
+  line-height: 19px;
+}
+
+.playlist-info .intro.active {
+  height: 65px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.playlist-info .arrow {
+  font-size: 12px;
+  text-align: right;
+  padding: 1px 11px 3px 0;
+}
+
+.playlist-info .arrow .icon-arrow-up {
+  display: none;
+}
+
+.playlist-content {
+  margin-bottom: 54px;
+}
+
+.playlist-content .list>h3 {
+  font-size: 12px;
+  padding: 2px 10px 5px;
+  background: #eeeff0;
+  color: #666;
+}
+
+.playlist-content .list .list-content a {
+  display: flex;
+  position: relative;
+}
+
+.playlist-content .list .list-content .list-number {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  align-items: center;
+  color: #999;
+  font-size: 17px;
+}
+
+.playlist-content .list .list-content .list-text {
+  flex: 1;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.playlist-content .list .list-content .list-text h3 {
+  font-size: 17px;
+}
+
+.playlist-content .list .list-content .list-text p {
+  font-size: 12px;
+  padding-top: 4px;
+  color: #888;
+}
+
+.playlist-content .list .list-content .icon-play {
+  width: 39px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  fill: #aaa;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 7px 30px;
+  background: #fff;
+}
+
+footer>a {
+  background: #d43b32;
+  color: #fff;
+  font-size: 16px;
+  padding: 3px 0 10px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border-radius: 34px;
+}
+
+footer>a::before {
+  content: "";
+  display: inline-block;
+  width: 21px;
+  height: 23px;
+  background: url(../svg/logo.svg) no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 5px;
+}
+
+
+/* footer .icon-wangyiyunyinyue{
+
+} */
