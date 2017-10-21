@@ -13,6 +13,7 @@ $(function () {
   let $latestSongUl = $('#latestSong')
   var latestSong = new AV.Query('Song')
   latestSong.limit(10)
+  latestSong.equalTo('new', true)
   latestSong.find().then(function (results) {
     createUlLi(results, $latestSongUl, 'latestSong')
     $('.latestSong #loading').remove()
@@ -23,6 +24,7 @@ $(function () {
   let $hotMusicOl = $('#hotMusicOl')
   var hotSongs = new AV.Query('Song')
   hotSongs.limit(20)
+  hotSongs.equalTo('hot', true)
   hotSongs.find().then(function (results) {
     createOlLi(results, $hotMusicOl, 'hotMusic')
     $('.hotMusicContent #loading').remove()
@@ -65,7 +67,11 @@ $(function () {
       querySinger.contains('singer', value)
       var queryAlbum = new AV.Query('Song')
       queryAlbum.contains('album', value)
-      var query = AV.Query.or(queryName, querySinger, queryAlbum)
+      var queryTransName = new AV.Query('Song')
+      queryTransName.contains('transName', value)
+      var queryTransAlbum = new AV.Query('Song')
+      queryTransAlbum.contains('transAlbum', value)
+      var query = AV.Query.or(queryName, querySinger, queryAlbum, queryTransName, queryTransAlbum)
 
       query.find().then(function (results) {
         $searchContent.css({
@@ -121,6 +127,14 @@ $(function () {
         name = song.album
         createSearchTipsLi(name, nameArray, $parent)
       }
+      if (song.transName.toLowerCase().indexOf(value) !== -1) {
+        name = song.transName
+        createSearchTipsLi(name, nameArray, $parent)
+      }
+      if (song.transAlbum.toLowerCase().indexOf(value) !== -1) {
+        name = song.transAlbum
+        createSearchTipsLi(name, nameArray, $parent)
+      }
     }
   }
 
@@ -172,7 +186,11 @@ $(function () {
     querySinger.contains('singer', value)
     var queryAlbum = new AV.Query('Song')
     queryAlbum.contains('album', value)
-    var query = AV.Query.or(queryName, querySinger, queryAlbum)
+    var queryTransName = new AV.Query('Song')
+    queryTransName.contains('transName', value)
+    var queryTransAlbum = new AV.Query('Song')
+    queryTransAlbum.contains('transAlbum', value)
+    var query = AV.Query.or(queryName, querySinger, queryAlbum, queryTransName, queryTransAlbum)
 
     query.find().then(function (results) {
       $searchContent.css({
@@ -237,7 +255,7 @@ $(function () {
       $parent.append(li)
       if(song.transName){
         let span = `<span>(${song.transName})</span>`
-        $('.listContent h3').eq(i).append(span)
+        $parent.find($('.listContent h3')).eq(i).append(span)
       }
       checkSq(song.sq, id, index)
       index++
@@ -273,6 +291,10 @@ $(function () {
                   </a>
                 </li>`
         $parent.append(li)
+        if(song.transName){
+          let span = `<span>(${song.transName})</span>`
+          $parent.find($('.listContent h3')).eq(i).append(span)
+        }
         checkSq(song.sq, id, index)
         index = parseInt(index) + 1
       }
@@ -280,10 +302,10 @@ $(function () {
   }
 
 
+  //搜索提示item
   function createSearchTipsLi(name, nameArray, $parent) {
     if ($.inArray(name, nameArray) == -1) {
       nameArray.push(name)
-      console.log(name)
       let li = `<li class="searchTipsItem">
             <div class="icon-wrapper">
               <svg class="icon icon-search">
@@ -304,6 +326,7 @@ $(function () {
   }
 
 
+  //搜索历史item
   function searchHistoryItem(value) {
     let li = `<li class="searchHistoryItem">
           <div class="icon-wrapper">

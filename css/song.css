@@ -63,13 +63,13 @@
 }
 
 .disc-container .disc .disc-cover {
-  width: 182px;
+  width: 184px;
   position: absolute;
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  margin-top: -91px;
-  margin-left: -91px;
+  margin-top: -92px;
+  margin-left: -92px;
   animation: circle 20s infinite linear;
   animation-play-state: paused;
 }
