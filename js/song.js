@@ -21,9 +21,12 @@ $(function () {
     }
     bindEventButton(audio)
     createSongInfo(song)
-
-
-    getLyric(song.lyric, audio)
+    if(song.lyric){
+      getLyric(song.lyric, audio)
+    }else{
+      $('.song-description .lyric .words').text('暂时没有歌词')
+      $('.song-description .lyric .words').css('font-size', '20px')
+    }
     if (song.tlyric) {
       getTranslateLyric(song.tlyric)
 

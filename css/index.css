@@ -202,7 +202,7 @@ section.latestSong{
   margin-top: 3px;
   padding-top: 64px;
   padding-bottom: 18px;
-  background: transparent url(https://i.loli.net/2017/10/13/59e0d56298ae3.png) no-repeat center;
+  background: transparent url(//i.loli.net/2017/10/13/59e0d56298ae3.png) no-repeat center;
   background-size: cover;
  }
 .art .logo svg{
@@ -232,7 +232,7 @@ section.latestSong{
 .hotMusicCover{
   padding-top: 146px;
   position: relative;
-  background: url(https://i.loli.net/2017/10/16/59e4690be9a44.jpg
+  background: url(//i.loli.net/2017/10/16/59e4690be9a44.jpg
   ) no-repeat center;
   background-size: cover;
 }
@@ -257,7 +257,7 @@ section.latestSong{
 .hotMusic .title{
   width: 142px;
   height: 67px;
-  background: url(https://i.loli.net/2017/10/16/59e467146cfb0.png
+  background: url(//i.loli.net/2017/10/16/59e467146cfb0.png
   ) no-repeat;
   background-size: 166px 97px;
   background-position: -24px -30px;
@@ -298,7 +298,7 @@ section.latestSong{
   font-size: 14px;
   color: #999;
   line-height: 55px;
-  background: url(http://oxwijsbmc.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.svg) no-repeat;
+  background: url(//oxwijsbmc.bkt.clouddn.com/%E4%B8%8B%E8%BD%BD.svg) no-repeat;
   background-size: 7px 14px;
   background-position: 91px 21px;
 }

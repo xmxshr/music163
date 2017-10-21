@@ -238,7 +238,7 @@ $(function () {
       let song = results[i].attributes
       let songId = results[i].id
       let li = `<li>
-                <a href="./song.html?id=${songId}">
+                <a href="./html/song.html?id=${songId}">
                   <div class="listContentWrapper">
                     <div class="listContent">
                       <h3>${song.name}</h3>
@@ -275,7 +275,7 @@ $(function () {
           })
         }
         let li = `<li>
-                  <a href="./song.html?id=${songId}">
+                  <a href="./html/song.html?id=${songId}">
                     <div class="listNumber"> ${pad(index)} </div>
                     <div class="listContentWrapper">
                       <div class="listContent">
