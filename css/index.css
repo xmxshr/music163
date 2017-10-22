@@ -46,19 +46,11 @@
 .list > li h3{
   font-size: 17px;
   line-height: 1.5;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
 }
 .list > li p{
   font-size: 12px;
   line-height: 1.5;
   color: #888;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
 }
 .list .listContent{
   flex: 1;
@@ -182,10 +174,6 @@ section.playlists{
   width: 100%;
 }
 .playlists .songs > li p{
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
   margin: 2px 2px 16px 6px;
   font-size: 13px;
   line-height: 15px;
