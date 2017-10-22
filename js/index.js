@@ -241,8 +241,8 @@ $(function () {
                 <a href="./html/song.html?id=${songId}">
                   <div class="listContentWrapper">
                     <div class="listContent">
-                      <h3 class=".line-clamp1">${song.name}</h3>
-                      <p class=".line-clamp1"><span id=${id + index}></span> ${song.singer} - ${song.album} </p>
+                      <h3 class="line-clamp1">${song.name}</h3>
+                      <p class="line-clamp1"><span id=${id + index}></span> ${song.singer} - ${song.album} </p>
                     </div>  
                     <div class="iconWrapper">
                       <svg class="icon icon-play">
@@ -279,8 +279,8 @@ $(function () {
                     <div class="listNumber"> ${pad(index)} </div>
                     <div class="listContentWrapper">
                       <div class="listContent">
-                        <h3 class=".line-clamp1">${song.name}</h3>
-                        <p class=".line-clamp1"><span id=${id + index}></span> ${song.singer} - ${song.album} </p>
+                        <h3 class="line-clamp1">${song.name}</h3>
+                        <p class="line-clamp1"><span id=${id + index}></span> ${song.singer} - ${song.album} </p>
                       </div>  
                       <div class="iconWrapper">
                         <svg class="icon icon-play">

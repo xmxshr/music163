@@ -21,15 +21,19 @@ query.find().then(function (results) {
   for (let i = 0; i < results.length; i++) {
     let song = results[i].attributes
     let songId = results[i].id
-    let li = `<li class="list-content">
+    let li = `<li>
                 <a href="./song.html?id=${songId}"> 
                   <div class="list-number">${i+1}</div>
-                  <div class="list-text">
-                    <h3>${song.name}</h3>
-                    <p> ${song.singer} - ${song.album} </p>
-                    <svg class="icon icon-play">
-                      <use xlink:href="#icon-play"></use>
-                    </svg>
+                  <div class="list-content-wrapper">
+                    <div class="list-text">
+                      <h3 class="line-clamp1">${song.name}</h3>
+                      <p class="line-clamp1"> ${song.singer} - ${song.album} </p>
+                    </div>  
+                    <div class="icon-wrapper">
+                      <svg class="icon icon-play">
+                        <use xlink:href="#icon-play"></use>
+                      </svg>
+                    </div>
                   </div>
                 </a>
               </li>`
