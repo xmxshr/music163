@@ -4,7 +4,8 @@
 <head>
   <title>网易云音乐</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <script src="./js/device.js"></script>
   <link href="./css/reset.css" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
 
@@ -66,62 +67,17 @@
       <li class="active">
         <section class="playlists">
           <h2 class="sectionTitle">推荐歌单</h2>
+          <div id="loading" class="loading">
+            <img src="../img/loading.gif" alt="">
+          </div>
           <ul class="songs">
-            <li>
-              <a href="./html/playlist.html">
-                <div class="cover">
-                  <img src="//i.loli.net/2017/10/18/59e7631a95aa1.jpg" alt="">
-                </div>
-                <p class="line-clamp2">单身享乐指南丨做个精致的单身侠（女生版）</p>
-              </a>
-            </li>
-            <li>
-              <a href="./html/playlist.html">
-                <div class="cover">
-                  <img src="//i.loli.net/2017/10/18/59e7633fa62df.jpg" alt="">
-                </div>
-                <p class="line-clamp2">众里寻她 | 一缕馥郁仙气迎面</p>
-              </a>
-            </li>
-            <li>
-              <a href="./html/playlist.html">
-                <div class="cover">
-                  <img src="//i.loli.net/2017/10/21/59eb5c6cb27ac.jpg" alt="">
-                </div>
-                <p class="line-clamp2">『韩语』清新花香小调</p>
-              </a>
-            </li>
-            <li>
-              <a href="./html/playlist.html">
-                <div class="cover">
-                  <img src="//i.loli.net/2017/10/18/59e7635e637d5.jpg" alt="">
-                </div>
-                <p class="line-clamp2">初音：清新的电音(easy pop)</p>
-              </a>
-            </li>
-            <li>
-              <a href="./html/playlist.html">
-                <div class="cover">
-                  <img src="//i.loli.net/2017/10/18/59e76372e3d3a.jpg" alt="">
-                </div>
-                <p class="line-clamp2">『欧美/燃系』打游戏必听BGM100首</p>
-              </a>
-            </li>
-            <li>
-              <a href="./html/playlist.html">
-                <div class="cover">
-                  <img src="//i.loli.net/2017/10/18/59e7638229ada.jpg" alt="">
-                </div>
-                <p class="line-clamp2">值得收藏的广告歌曲</p>
-              </a>
-            </li>
+
           </ul>
         </section>
         <section class="latestSong">
           <h2 class="sectionTitle">最新音乐</h2>
           <div id="loading" class="loading">
-            <img src="//i.loli.net/2017/10/16/59e463e45e1ed.gif
-                  " alt="">
+            <img src="../img/loading.gif" alt="">
           </div>
           <ul id="latestSong" class="list">
 
@@ -194,8 +150,7 @@
           </section>
           <section class="hotMusicContent">
             <div id="loading" class="loading">
-              <img src="//i.loli.net/2017/10/16/59e463e45e1ed.gif
-                " alt="">
+              <img src="../img/loading.gif" alt="">
             </div>
             <ol id="hotMusicOl" class="list">
 

@@ -16,7 +16,7 @@ $intro.on('click', function () {
 
 let $list = $('.playlist-content .list')
 var query = new AV.Query('Song')
-query.limit(10)
+query.limit(20)
 query.find().then(function (results) {
   for (let i = 0; i < results.length; i++) {
     let song = results[i].attributes

@@ -7,7 +7,7 @@ $(function () {
     $li.addClass('active').siblings().removeClass('active')
     $('.tabContent').children().eq(index).addClass('active').siblings().removeClass('active')
   })
-
+  createPlaylists()
 
   //推荐音乐list
   let $latestSongUl = $('#latestSong')
@@ -253,7 +253,7 @@ $(function () {
                 </a>
               </li>`
       $parent.append(li)
-      if(song.transName){
+      if (song.transName) {
         let span = `<span>(${song.transName})</span>`
         $parent.find($('.listContent h3')).eq(i).append(span)
       }
@@ -291,7 +291,7 @@ $(function () {
                   </a>
                 </li>`
         $parent.append(li)
-        if(song.transName){
+        if (song.transName) {
           let span = `<span>(${song.transName})</span>`
           $parent.find($('.listContent h3')).eq(i).append(span)
         }
@@ -350,6 +350,44 @@ $(function () {
       let itemText = $(e.currentTarget).find('h3')[0].innerText
       querySearch(itemText)
     })
+  }
+
+  //playlists 的 item
+  function createPlaylists() {
+    let array = [{
+      name: '单身享乐指南丨做个精致的单身侠（女生版）',
+      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/1.jpg',
+    }, {
+      name: '众里寻她 | 一缕馥郁仙气迎面',
+      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/2.jpg',
+    }, {
+      name: '『韩语』清新花香小调',
+      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/3.jpg',
+    }, {
+      name: '初音：清新的电音(easy pop)',
+      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/4.jpg',
+    }, {
+      name: '『欧美/燃系』打游戏必听BGM100首',
+      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/5.jpg',
+    }, {
+      name: '值得收藏的广告歌曲',
+      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/6.jpg',
+    }]
+
+    for (let i = 0; i < array.length; i++) {
+      let li = `
+        <li>
+          <a href="./html/playlist.html">
+            <div class="cover">
+              <img src="${array[i].cover}" alt="">
+            </div>
+            <p class="line-clamp2">${array[i].name}</p>
+          </a>
+        </li>
+      `
+      $('.playlists .songs').append(li)
+    }
+    $('.playlists #loading').remove()
   }
 
 })

@@ -1,5 +1,5 @@
 $(function () {
-
+  let fontSize = width / 10
   let id = location.search.match(/id=([^&]+)/)[1]
   var query = new AV.Query('Song')
   query.get(id).then(function (results) {
@@ -21,20 +21,19 @@ $(function () {
     }
     bindEventButton(audio)
     createSongInfo(song)
+    
     if(song.lyric){
       getLyric(song.lyric, audio)
     }else{
-      $('.song-description .lyric .words').text('暂时没有歌词')
-      $('.song-description .lyric .words').css('font-size', '20px')
+      $('.song-description .lyric .words').text('暂时没有歌词').addClass('no-lyric')
     }
     if (song.tlyric) {
-      getTranslateLyric(song.tlyric)
-
+      getTranslateLyric(song.tlyric, audio)
     }
   })
 
 
-  function getTranslateLyric(lyric) {
+  function getTranslateLyric(lyric, audio) {
     let lyrics = lyric
     let regex = /\[(.+)\](.+)/
     let array = lyric.split(/\\n/)
@@ -62,16 +61,14 @@ $(function () {
       for (let j = 0; j < $lyrics.length; j++) {
         if (+$lyrics.eq(j).attr('data-time') === array[i].time) {
           $lyrics.eq(j).append(span)
-          $lyrics.eq(j).addClass('addTlyric')
           break
         }
       }
     }
-    $('.song-description .lyric .words .tlyric').css({
-      fontSize: '14px',
-      lineHeight: '14px',
-      display: 'block'
-    })
+    $lyrics.addClass('addTlyric')
+
+    clearInterval(audioTime)
+    setLyric(array, audio, 0)
   }
 
   function getLyric(lyric, audio) {
@@ -103,12 +100,11 @@ $(function () {
       $lyricCt.append(p)
     }
 
-    setLyric(array, audio)
-
+    setLyric(array, audio, 1)
   }
-
-  function setLyric(array, audio) {
-    setInterval(function () {
+  let audioTime
+  function setLyric(array, audio, lineHeight) {
+    audioTime = setInterval(function () {
       let currentTime = audio.currentTime
       let $lyrics = $('.song-description .lyric .words p')
       let $whichLine
@@ -124,9 +120,9 @@ $(function () {
         $whichLine.addClass('active').prev().removeClass('active')
         let top = $whichLine.offset().top
         let ctTop = $('.song-description .lyric .words').offset().top
-        let delta = top - ctTop - $('.song-description .lyric').innerHeight() / 3
+        let delta = top - ctTop - $('.song-description .lyric').innerHeight()*lineHeight / 3
         $('.song-description .lyric .words').css({
-          transform: `translateY(-${delta}px)`
+          transform: `translateY(-${delta/fontSize}rem)`
         })
       }
     }, 300)
@@ -142,6 +138,13 @@ $(function () {
       backgroundImage: 'url(' + song.coverUrl[1] + ')',
       opacity: '1'
     })
+    let title
+    if(song.transName){
+      title = `${song.name}(${song.transName}) - ${song.singer}`
+    }else{
+      title = `${song.name} - ${song.singer}`
+    }
+    $('title').text(title)
   }
 
   function bindEventButton(audio) {
