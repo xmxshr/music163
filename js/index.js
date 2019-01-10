@@ -355,23 +355,23 @@ $(function () {
   //playlists 的 item
   function createPlaylists() {
     let array = [{
-      name: '单身享乐指南丨做个精致的单身侠（女生版）',
-      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/1.jpg',
+      name: '心情明朗，万物可爱',
+      cover: '../img/playList/1.jpg',
     }, {
-      name: '众里寻她 | 一缕馥郁仙气迎面',
-      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/2.jpg',
+      name: '人生不会重启，但未来总是可期',
+      cover: '../img/playList/2.jpg',
     }, {
-      name: '『韩语』清新花香小调',
-      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/3.jpg',
+      name: '快乐还是忧伤 狂躁与唯美的碰撞',
+      cover: '../img/playList/3.jpg',
     }, {
-      name: '初音：清新的电音(easy pop)',
-      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/4.jpg',
+      name: '这些歌如感情一般 没有前奏也没有尾奏',
+      cover: '../img/playList/4.jpg',
     }, {
-      name: '『欧美/燃系』打游戏必听BGM100首',
-      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/5.jpg',
+      name: '韩国hiphop-纯粹的音乐 特立独行又温柔于心',
+      cover: '../img/playList/5.jpg',
     }, {
-      name: '值得收藏的广告歌曲',
-      cover: '//oxwijsbmc.bkt.clouddn.com/playlist/6.jpg',
+      name: '8D环绕歌曲，戴上耳机',
+      cover: '../img/playList/6.jpg',
     }]
 
     for (let i = 0; i < array.length; i++) {
