@@ -356,22 +356,22 @@ $(function () {
   function createPlaylists() {
     let array = [{
       name: '心情明朗，万物可爱',
-      cover: '../img/playList/1.jpg',
+      cover: './img/playList/1.jpg',
     }, {
       name: '人生不会重启，但未来总是可期',
-      cover: '../img/playList/2.jpg',
+      cover: './img/playList/2.jpg',
     }, {
       name: '快乐还是忧伤 狂躁与唯美的碰撞',
-      cover: '../img/playList/3.jpg',
+      cover: './img/playList/3.jpg',
     }, {
       name: '这些歌如感情一般 没有前奏也没有尾奏',
-      cover: '../img/playList/4.jpg',
+      cover: './img/playList/4.jpg',
     }, {
       name: '韩国hiphop-纯粹的音乐 特立独行又温柔于心',
-      cover: '../img/playList/5.jpg',
+      cover: './img/playList/5.jpg',
     }, {
       name: '8D环绕歌曲，戴上耳机',
-      cover: '../img/playList/6.jpg',
+      cover: './img/playList/6.jpg',
     }]
 
     for (let i = 0; i < array.length; i++) {
