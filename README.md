@@ -4,7 +4,7 @@
 # 预览
 电脑请使用`Chrome`打开，并`右键->检查`打开开发者模式，使用移动端模拟器查看。或使用手机扫描二维码打开链接。
 
-预览链接：[预览](http://xumx.site/)  
+预览链接：[预览](https://xmxshr.github.io/music163/)  
 二维码：  
 [![1514712938.png](https://i.loli.net/2017/12/31/5a48af73a614f.png)](https://i.loli.net/2017/12/31/5a48af73a614f.png)
 
